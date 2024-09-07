@@ -1,0 +1,122 @@
+# Sales Receipt Generator (C Console Application)
+
+## Overview
+
+This project is a simple **Sales Receipt Generator** written in C. It allows users to generate a sales receipt by inputting item details such as the item name, quantity, and price. The system then calculates the total price, applies a discount, and outputs a well-formatted receipt that includes item details, totals, and the footer.
+
+## Features
+
+- **Generate Sales Receipt**: Users can input item details, and the application will generate a receipt.
+- **Calculate Totals**: Automatically calculates total price, VAT (if applicable), and applies a 10% discount.
+- **Display Receipt**: Outputs a formatted sales receipt showing all purchased items, quantities, prices, and totals.
+- **Additional Information**: The receipt includes the seller's information and a custom footer message.
+
+## Program Flow
+
+The program starts by prompting the user to select an option from a menu. If the **Generate Sales Receipt** option is selected, the user inputs item details, and the application outputs a formatted receipt.
+
+### Menu Options
+
+1. **Generate Sales Receipt**: Generate a receipt by inputting the purchased items, their quantity, and price.
+2. **Show All Sales Receipts** (Not implemented yet).
+3. **Search Invoice** (Not implemented yet).
+4. **Exit**: Exit the program.
+
+## Example Receipt Output
+
+```
+----------------------------------
+SALE RECEIPT
+
+Mwegwa Animal DrugShop
+
+aaronug421@gmail.com
+
+0777306662/0755004133
+-----------------------------------
+
+
+sn   Item    Qty   Price
+1    Milk    2.00  1500.00
+
+
+----------------------------------
+TOTAL VATABLE:      UGX0.00
+TOTAL EXEMPT:       UGX1500.00
+----------------------------------
+
+TOTAL AMOUNT:       UGX1350.00
+----------------------------------
+
+VAT AMOUNT:         UGX0.00
+----------------------------------
+DISCOUNT:           UGX150.00
+----------------------------------
+1 item(s)
+served by: Dinah Angom
+Date: Sep 07 2024
+----------------------------------
+Thank you for shopping with us
+----------------------------------
+Powered By: Aaron Nevalinz Ogwal
+```
+
+## Program Components
+
+- **Header Generation**: Displays shop information and contact details at the top of the receipt.
+- **Body Generation**: Displays the list of purchased items with their quantity and price.
+- **Totals and Discount Calculation**: Calculates the total price of the items, applies a 10% discount, and calculates VAT (currently 0).
+- **Footer Generation**: Displays details like the number of items, server name, date, and a thank-you message.
+
+## How to Run
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/sales-receipt-generator.git
+   ```
+
+2. Navigate to the project directory:
+   ```bash
+   cd sales-receipt-generator
+   ```
+
+3. Compile the program:
+   ```bash
+   gcc main.c -o sales_receipt
+   ```
+
+4. Run the application:
+   ```bash
+   ./sales_receipt
+   ```
+
+5. Follow the on-screen instructions to generate your sales receipt.
+
+## Code Structure
+
+- **`generateHeader()`**: Prints the receipt's header information.
+- **`generateReceiptNo()`**: Generates and prints a receipt number (hardcoded).
+- **`generateBody()`**: Displays the purchased items' details.
+- **`generateTotalsAndTaxesAndDiscount()`**: Calculates and prints totals, VAT, discount, and net total.
+- **`generateFooter()`**: Prints the footer message with a thank-you note and developer information.
+
+## Variables
+
+- **`total`**: Holds the sum of all item prices.
+- **`vat`**: Currently set to 0.00 (can be updated as needed).
+- **`discount`**: 10% of the total price is automatically applied as a discount.
+- **`netTotal`**: The final amount after applying the discount.
+
+## Future Improvements
+
+- Implement the functionality for showing all sales receipts.
+- Add the feature to search for specific invoices.
+- Improve VAT calculations and allow dynamic VAT input.
+
+## License
+
+This project is licensed under the MIT License.
+
+---
+
+Feel free to contribute by opening an issue or submitting a pull request!
